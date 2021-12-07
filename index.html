@@ -1,98 +1,70 @@
-<!-- ! <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English tester app</title>
-   custom links 
-  <link rel="stylesheet" href="assets/css/style.css">
-   custom links 
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-</head>
-
-<body>
-
-  <!--! section container-main 
-  <div class="container-m" id="app">
-    <div class="row">
-      <div class="col main">
-        <div class="section top header-section">
-          <div class="question-content">
-            <h3 id="question" class="text-s">
-              {{questions[0].question}}
-            </h3>
-          </div>
-        </div>
-        <div class="section bottom bottom-section">
-          <div class="row">
-            <div class="ans-cont" v-for="item,key in questions[0].variants">
-              <div class="answer gradient-2" @click="check(event)">
-                <div class="left">
-                  <span class="circle">{{questions[0].prefixes[key]}}</span>
-                </div>
-                <div class="right">
-                  <span id="ans">
-                    {{item}}
-                    <input type="checkbox" name="same" id="we" style="width:0;height: 0;" v-bind:da ="">
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="section footer" style="align-items: flex-start;">
-          <div class="row">
-            <div class="col-2">
-              <button class="hoverable btn pre">
-                <span>
-                  previous
-                </span>
-              </button>
-            </div>
-            <div class="col-2">
-              <button class="hoverable btn next" @click="next" id="n">
-                <span>
-                  next
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!--! section container-main 
-  <script src="assets/js/vue.global.js"> </script>
-  <script src="assets/js/strange.js"></script>
-  <script src="assets/js/main.js"></script>
-</body>
-
-
-</html>
--->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <title>English tester</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 
 <body>
-  <div class="container" data-how="">
-    <div class="main-1">
-      <div id="quiz"></div>
-      <div id="results"></div>
+    <div class="start_btn">
+        <input type="text" id="username" placeholder="username">
+        <button>Start Quiz</button>
     </div>
-  </div>
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/strange.js"></script>
-  <Script src="assets/js/add.js"></Script>
+    <div class="info_box">
+        <div class="info-title"><span>Some Rules of this Quiz</span></div>
+        <div class="info-list">
+            <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
+            <div class="info">2. Once you select your answer, it can't be undone.</div>
+            <div class="info">3. You can't select any option once time goes off.</div>
+            <div class="info">4. You can't exit from the Quiz while you're playing.</div>
+            <div class="info">5. You'll get points on the basis of your correct answers.</div>
+        </div>
+        <div class="buttons">
+            <button class="quit">Exit Quiz</button>
+            <button class="restart">Continue</button>
+        </div>
+    </div>
+
+    <div class="quiz_box">
+        <header>
+            <div class="title">Awesome Quiz Application</div>
+            <div class="timer">
+                <div class="time_left_txt">Time Left</div>
+                <div class="timer_sec">15</div>
+            </div>
+            <div class="time_line"></div>
+        </header>
+        <section>
+            <div class="que_text">
+            </div>
+            <div class="option_list">
+            </div>
+        </section>
+
+        <footer>
+            <div class="total_que">
+            </div>
+            <button class="next_btn">Next Que</button>
+        </footer>
+    </div>
+
+    <div class="result_box">
+        <div class="icon">
+            <i class="fas fa-crown"></i>
+        </div>
+        <div class="complete_text">You've completed the Quiz!</div>
+        <div class="score_text">
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
+    </div>
 </body>
+<script src="assets/js/main.js"></script>
 
 </html>
