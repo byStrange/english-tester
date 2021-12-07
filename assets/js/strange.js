@@ -640,26 +640,28 @@ if (window === undefined) {
       return b;
     }
   };
-  $rippleBtns.forEach(btn => {
-    btn.addEventListener('click', function (e) {
-      btn.css({
-        overflow: 'hidden'
-      })
-      const x = e.clientX - e.target.offsetLeft;
-      const y = e.clientY - e.target.offsetTop;
+  if (window.hasOwnProperty('$rippleBtns')) {
+    $rippleBtns.forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        btn.css({
+          overflow: 'hidden'
+        })
+        const x = e.clientX - e.target.offsetLeft;
+        const y = e.clientY - e.target.offsetTop;
 
-      let ripples = document.createElement('span');
-      ripples.add('ripple')
-      ripples.css({
-        top: y + 'px',
-        left: x + 'px'
+        let ripples = document.createElement('span');
+        ripples.add('ripple')
+        ripples.css({
+          top: y + 'px',
+          left: x + 'px'
+        })
+        btn.appendChild(ripples);
+        setTimeout(function () {
+          ripples.remove()
+        }, 500)
       })
-      btn.appendChild(ripples);
-      setTimeout(function () {
-        ripples.remove()
-      }, 500)
     })
-  })
+  }
   String.prototype.reverse = function () {
     return kns(this).split("").reverse().join("");
   };
