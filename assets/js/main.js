@@ -1,35 +1,54 @@
 let questions = [{
-  numb: 1,
-  question: "A dictionary has data _____ words.",
-  answer: "about",
-  options: ["to", "about", "in", "at"]
-}, {
-  numb: 2,
-  question: " _____ pass me the salt?",
-  answer: "Could",
-  options: ["Should", "Must", "Could", "Might"]
-}, {
-  numb: 3,
-  question: "Did you _____ who I meant?",
-  answer: "know",
-  options: ["known", "knew", "know", "got"]
-}, {
-  numb: 4,
-  question: "He _____ English much _____ he writes it.",
-  answer: "speaks / better than",
-  options: ["speaks / better than", "speak / worse", "speaks / clearer than", "speak /  a lot"]
-}, {
-  numb: 5,
-  question: "What does XML stand for?",
-  answer: "eXtensible Markup Language",
-  options: ["eXtensible Markup Language", "eXecutable Multiple Language", "eXTra Multi-Program Language", "eXamine Multiple Language"]
-}, {
-  numb: 6,
-  question: "What does HTML stand for?",
-  answer: "Hyper Text Markup Language",
-  options: ["Hyper Text Preprocessor", "Hyper Text Markup Language", "Hyper Text Multiple Language", "Hyper Tool Multi Language"]
-}];
-
+    numb: 1,
+    question: "A dictionary has data _____ words.",
+    answer: "about",
+    options: ["to", "about", "in", "at"]
+  }, {
+    numb: 2,
+    question: " _____ pass me the salt?",
+    answer: "Could",
+    options: ["Should", "Must", "Could", "Might"]
+  }, {
+    numb: 3,
+    question: "Did you _____ who I meant?",
+    answer: "know",
+    options: ["known", "knew", "know", "got"]
+  }, {
+    numb: 4,
+    question: "He _____ English much _____ he writes it.",
+    answer: "speaks / better than",
+    options: ["speaks / better than", "speak / worse", "speaks / clearer than", "speak /  a lot"]
+  }, {
+    numb: 5,
+    question: "I suggest _______  arrive a little early so as to get a good seat.",
+    answer: "you should",
+    options: ["you should not", "to arrive", "you to should", "you should"]
+  }, {
+    numb: 6,
+    question: "______ it`s raining, I will stay at home.",
+    answer: "as long as",
+    options: ["as long as", "on the other hand", "Because of", "however"]
+  },
+  {
+    numb: 7,
+    question: "It ______ me ____ hour to get to that place yesterday.",
+    answer: "took / an",
+    options: ["takes / a", "took / 2", "taken / an", "took / an"]
+  },
+  {
+    numb: 8,
+    question: "Who is the man _____ the red tie?",
+    answer: "with",
+    options: ["in", "on", "with", "off"]
+  },
+  {
+    numb: 9,
+    question: "I have been getting knowledge about IT _______ June.",
+    answer: "with",
+    options: ["since", "for", "to", "by"]
+  },
+];
+// Who is the man _____ the red tie?
 function dates() {
   date = new Date, min = date.getMinutes(), hour = date.getHours(), mon = date.getMonth() + 1, day = date.getDate();
   return {
@@ -118,7 +137,7 @@ function showResult() {
     let t = "<span>and sorry , You got only <p>" + userScore + "</p> out of <p>" + questions.length + "</p></span>";
     e.innerHTML = t
   }
-  text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore}`, send(text)
+  text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore}/ ${questions.length}`, send(text)
 }
 
 function startTimer(e) {
