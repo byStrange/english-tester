@@ -29,7 +29,16 @@ let questions = [{
   answer: "Hyper Text Markup Language",
   options: ["Hyper Text Preprocessor", "Hyper Text Markup Language", "Hyper Text Multiple Language", "Hyper Tool Multi Language"]
 }];
-date = new Date, min = date.getMinutes(), hour = date.getHours(), mon = date.getMonth() + 1, day = date.getDate();
+
+function dates() {
+  date = new Date, min = date.getMinutes(), hour = date.getHours(), mon = date.getMonth() + 1, day = date.getDate();
+  return {
+    min: min,
+    hour: hour,
+    mon: mon,
+    day: day
+  }
+}
 const start_btn = document.querySelector(".start_btn button"),
   info_box = document.querySelector(".info_box"),
   exit_btn = info_box.querySelector(".buttons .quit"),
@@ -53,7 +62,7 @@ start_btn.onclick = (() => {
 }), exit_btn.onclick = (() => {
   info_box.classList.remove("activeInfo"), userName.value = "", start_btn.parentElement.style.opacity = 1
 }), continue_btn.onclick = (() => {
-  info_box.classList.remove("activeInfo"), quiz_box.classList.add("activeQuiz"), showQuetions(0), queCounter(1), startTimer(15), startTimerLine(0), send(`Foydalanuvchi: ${use}%0A\nBoshlash vaqti: ${hour}:${min}%0A\nSana: ${mon}/${day}`)
+  info_box.classList.remove("activeInfo"), quiz_box.classList.add("activeQuiz"), showQuetions(0), queCounter(1), startTimer(15), startTimerLine(0), send(`Foydalanuvchi: ${use}%0A\nBoshlash vaqti: ${dates().hour}:${dates().min}%0A\nSana: ${dates().mon}/${dates().day}`)
 });
 let counter, counterLine, timeValue = 15,
   que_count = 0,
@@ -109,6 +118,7 @@ function showResult() {
     let t = "<span>and sorry , You got only <p>" + userScore + "</p> out of <p>" + questions.length + "</p></span>";
     e.innerHTML = t
   }
+  text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore}`, send(text)
 }
 
 function startTimer(e) {
@@ -136,5 +146,5 @@ function startTimerLine(e) {
 
 function queCounter(e) {
   let t = "<span><p>" + e + "</p> of <p>" + questions.length + "</p> Questions</span>";
-  bottom_ques_counter.innerHTML = t, text = `\nTugash vaqti: ${hour}:${min}%0A\nNatija: ${bottom_ques_counter.innerHTML}`, send(text)
+  bottom_ques_counter.innerHTML = t
 }
