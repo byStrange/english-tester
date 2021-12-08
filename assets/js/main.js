@@ -44,8 +44,14 @@ let questions = [{
   {
     numb: 9,
     question: "I have been getting knowledge about IT _______ June.",
-    answer: "with",
+    answer: "since",
     options: ["since", "for", "to", "by"]
+  },
+  {
+    numb: 10,
+    question: "If I had a chance to study abroad, I _______ make my way to ________?",
+    answer: "would / Hungry",
+    options: ["would / Hungry", "have to  / Hungry", "were / Hungry", "was / Hungary"]
   },
 ];
 // Who is the man _____ the red tie?
