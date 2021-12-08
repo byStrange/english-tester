@@ -5,7 +5,7 @@ let questions = [{
     options: ["to", "about", "in", "at"]
   }, {
     numb: 2,
-    question: " _____ pass me the salt?",
+    question: " _____ you pass me the salt?",
     answer: "Could",
     options: ["Should", "Must", "Could", "Might"]
   }, {
