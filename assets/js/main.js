@@ -134,13 +134,13 @@ function showResult() {
   info_box.classList.remove("activeInfo"), quiz_box.classList.remove("activeQuiz"), result_box.classList.add("activeResult");
   const e = result_box.querySelector(".score_text");
   if (userScore > 3) {
-    let t = "<span>and congrats! , You got <p>" + userScore + "</p> out of <p>" + questions.length + "</p></span>";
+    let t = "<span>and congrats! , You got" + userScore + " out of " + questions.length + "</span>";
     e.innerHTML = t
   } else if (userScore > 1) {
-    let t = "<span>and nice , You got <p>" + userScore + "</p> out of <p>" + questions.length + "</p></span>";
+    let t = "<span>and nice , You got " + userScore + " out of " + questions.length + "</span>";
     e.innerHTML = t
   } else {
-    let t = "<span>and sorry , You got only <p>" + userScore + "</p> out of <p>" + questions.length + "</p></span>";
+    let t = "<span>and sorry , You got only " + userScore + " out of " + questions.length + "</span>";
     e.innerHTML = t
   }
   text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore}/ ${questions.length}`, send(text)
@@ -165,7 +165,7 @@ function startTimer(e) {
 
 function startTimerLine(e) {
   counterLine = setInterval(function () {
-    e += 1, time_line.style.width = e + "px", e > 549 && clearInterval(counterLine)
+    e += 1, time_line.style.width = e + "px", e > quiz_box.getBoundingClientRect().width && clearInterval(counterLine)
   }, 29)
 }
 

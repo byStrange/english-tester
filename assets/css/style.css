@@ -361,7 +361,6 @@ footer button.show {
 
 .result_box .buttons button {
   margin: 0 10px;
-  height: 45px;
   padding: 0 20px;
   font-size: 18px;
   font-weight: 500;
@@ -390,4 +389,28 @@ footer button.show {
 .buttons button.quit:hover {
   color: #fff;
   background: #007bff;
+}
+
+@media screen and (max-width:600px) {
+  .quiz_box {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width:600px) {
+
+  .start_btn,
+  .info_box,
+  .quiz_box,
+  .result_box {
+    width: 100% !important;
+  }
+
+  .start_btn input {
+    width: 100%;
+  }
+
+  .quiz_box header {
+    justify-content: center !important;
+  }
 }
