@@ -134,7 +134,7 @@ function showResult() {
   info_box.classList.remove("activeInfo"), quiz_box.classList.remove("activeQuiz"), result_box.classList.add("activeResult");
   const e = result_box.querySelector(".score_text");
   if (userScore > 3) {
-    let t = "<span>and congrats! , You got" + userScore + " out of " + questions.length + "</span>";
+    let t = "<span>and congrats! , You got " + userScore + " out of " + questions.length + "</span>";
     e.innerHTML = t
   } else if (userScore > 1) {
     let t = "<span>and nice , You got " + userScore + " out of " + questions.length + "</span>";
@@ -143,7 +143,7 @@ function showResult() {
     let t = "<span>and sorry , You got only " + userScore + " out of " + questions.length + "</span>";
     e.innerHTML = t
   }
-  text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore}/ ${questions.length}`, send(text)
+  text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore} / ${questions.length}`, send(text)
 }
 
 function startTimer(e) {
