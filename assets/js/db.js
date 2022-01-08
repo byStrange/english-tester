@@ -40,9 +40,9 @@ function NewUserName(id, name) {
     })
 }
 
-function newUserResult(player, result) {
+function newUserResult(player, result, _len) {
     db.transaction(function (tx) {
-        tx.executeSql(`INSERT INTO PLAYERS (player, result, end_time) VALUES ('${player}', ${result}, '${new Date()}')`)
+        tx.executeSql(`INSERT INTO PLAYERS (player, result, end_time) VALUES ('${player}', ${result}/${_len}, '${new Date()}')`)
     })
 }
 

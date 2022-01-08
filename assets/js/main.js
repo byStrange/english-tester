@@ -152,7 +152,7 @@ function showResult() {
     let t = "<span>and sorry , You got only " + userScore + " out of " + questions.length + "</span>";
     e.innerHTML = t
   }
-  add.user.result(use, userScore)
+  add.user.result(use, userScore, questions.length)
   text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore} / ${questions.length}`, send(text)
 }
 
