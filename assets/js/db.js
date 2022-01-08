@@ -7,31 +7,18 @@ function createTable() {
     })
 }
 
-function encrypt(value) {
-    var result = "";
-    for (i = 0; i < value.length; i++) {
-        if (i < value.length - 1) {
-            result += value.charCodeAt(i) + 10;
-            result += "-";
-        } else {
-            result += value.charCodeAt(i) + 10;
-        }
-    }
-    return result;
+function encrypt(r) {
+    var t = "";
+    for (i = 0; i < r.length; i++) i < r.length - 1 ? (t += r.charCodeAt(i) + 10, t += "-") : t += r.charCodeAt(i) + 10;
+    return t
 }
+const shuffle = r => r.sort((r, t) => .5 - Math.random());
 
-const shuffle = (ar) => {
-    return ar.sort((a, b) => 0.5 - Math.random());
-}
-
-function decrypt(value) {
-    var result = "";
-    var array = value.split("-");
-
-    for (i = 0; i < array.length; i++) {
-        result += String.fromCharCode(array[i] - 10);
-    }
-    return result;
+function decrypt(r) {
+    var t = "",
+        n = r.split("-");
+    for (i = 0; i < n.length; i++) t += String.fromCharCode(n[i] - 10);
+    return t
 }
 
 createTable()
@@ -59,11 +46,10 @@ function newUserResult(player, result) {
     })
 }
 
-function getAll() {
-    db.transaction(function (tx) {
-        tx.executeSql(`SELECT * FROM PLAYERS`, [], function (tx, results) {
-            console.log(results);
-            res = results;
-        })
-    });
-}
+// function getAll() {
+//     db.transaction(function (tx) {
+//         tx.executeSql(`SELECT * FROM PLAYERS`, [], function (tx, results) {
+//             console.log(results);
+//         })
+//     });
+// }
