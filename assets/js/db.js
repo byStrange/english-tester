@@ -30,9 +30,6 @@ const add = {
     }
 }
 
-const get = {
-    get_all: getAll
-}
 
 function NewUserName(id, name) {
     db.transaction(function (tx) {
