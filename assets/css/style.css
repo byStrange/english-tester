@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #007bff;
+  background: #151515;
 }
 
 ::selection {
@@ -49,7 +49,12 @@ input {
   background: #fff;
   cursor: pointer;
   margin-bottom: 5px;
+  transition: all 250ms
+}
 
+.start_btn button:hover {
+  background: #0263ca;
+  color: #fff
 }
 
 .start_btn input {
@@ -124,6 +129,7 @@ input {
   opacity: 0;
   pointer-events: none;
   transition: all 0.3s ease;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, .1)
 }
 
 .quiz_box header {
@@ -391,11 +397,6 @@ footer button.show {
   background: #007bff;
 }
 
-@media screen and (max-width:600px) {
-  .quiz_box {
-    width: 100% !important;
-  }
-}
 
 @media screen and (max-width:600px) {
 
