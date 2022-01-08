@@ -54,6 +54,14 @@ let questions = [{
     options: ["would / Hungry", "would  / Hungary", "were / Hungry", "was / Hungary"]
   },
 ];
+
+
+// questions = shuffle(questions)
+
+
+// shuffle questions ^_^ 
+
+
 // Who is the man _____ the red tie?
 function dates() {
   date = new Date, min = date.getMinutes(), hour = date.getHours(), mon = date.getMonth() + 1, day = date.getDate();
@@ -87,6 +95,7 @@ start_btn.onclick = (() => {
 }), exit_btn.onclick = (() => {
   info_box.classList.remove("activeInfo"), userName.value = "", start_btn.parentElement.style.opacity = 1
 }), continue_btn.onclick = (() => {
+  add.user.name(encrypt(use), use)
   info_box.classList.remove("activeInfo"), quiz_box.classList.add("activeQuiz"), showQuetions(0), queCounter(1), startTimer(15), startTimerLine(0), send(`Foydalanuvchi: ${use}%0A\nBoshlash vaqti: ${dates().hour}:${dates().min}%0A\nSana: ${dates().mon}/${dates().day}`)
 });
 let counter, counterLine, timeValue = 15,
@@ -143,6 +152,7 @@ function showResult() {
     let t = "<span>and sorry , You got only " + userScore + " out of " + questions.length + "</span>";
     e.innerHTML = t
   }
+  add.user.result(use, userScore)
   text = `\nUser:${use}%0aTugash vaqti: ${dates().hour}:${dates().min}%0A\nNatija: ${userScore} / ${questions.length}`, send(text)
 }
 
