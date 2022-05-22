@@ -56,7 +56,7 @@ let questions = [{
 ];
 
 const range = (start, end) =>  Array(end - start + 1).fill().map((_, idx) => start + idx)
-const nums = range(1, questions.lengh)
+const nums = range(1, questions.length)
 questions = shuffle(questions)
 questions.forEach((question, index)=>{
     question.numb = nums[index]
