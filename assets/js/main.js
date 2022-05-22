@@ -1,74 +1,31 @@
-let questions = [{
-    numb: 1,
-    question: "A dictionary has data _____ words.",
-    answer: "about",
-    options: ["to", "about", "in", "at"]
-  }, {
-    numb: 2,
-    question: " _____ you pass me the salt?",
-    answer: "Could",
-    options: ["Should", "Must", "Could", "Might"]
-  }, {
-    numb: 3,
-    question: "Did you _____ who I meant?",
-    answer: "know",
-    options: ["known", "knew", "know", "got"]
-  }, {
-    numb: 4,
-    question: "He _____ English much _____ he writes it.",
-    answer: "speaks / better than",
-    options: ["speaks / better than", "speak / worse", "speaks / clearer than", "speak /  a lot"]
-  }, {
-    numb: 5,
-    question: "I suggest _______  arrive a little early so as to get a good seat.",
-    answer: "you should",
-    options: ["you should not", "to arrive", "you to should", "you should"]
-  }, {
-    numb: 6,
-    question: "______ it`s raining, I will stay at home.",
-    answer: "as long as",
-    options: ["as long as", "on the other hand", "Because of", "however"]
-  },
-  {
-    numb: 7,
-    question: "It ______ me ____ hour to get to that place yesterday.",
-    answer: "took / an",
-    options: ["takes / a", "took / 2", "taken / an", "took / an"]
-  },
-  {
-    numb: 8,
-    question: "Who is the man _____ the red tie?",
-    answer: "with",
-    options: ["in", "on", "with", "off"]
-  },
-  {
-    numb: 9,
-    question: "I have been getting knowledge about IT _______ June.",
-    answer: "since",
-    options: ["since", "for", "to", "by"]
-  },
-  {
-    numb: 10,
-    question: "If I had a chance to study abroad, I _______ make my way to ________?",
-    answer: "would  / Hungary",
-    options: ["would / Hungry", "would  / Hungary", "were / Hungry", "was / Hungary"]
-  },
-];
-
-const range = (start, end) =>  Array(end - start + 1).fill().map((_, idx) => start + idx)
+import json from "./questions.json" assert { type: "json" };
+import config from "../../config.json" assert { type: "json" };
+var questions = json.questions;
+const api_token = config.api_token;
+const chat_id = config.chat_id;
+const range = (start, end) => Array(end - start + 1).fill().map((_, idx) => start + idx)
 const nums = range(1, questions.length)
 questions = shuffle(questions)
-questions.forEach((question, index)=>{
-    question.numb = nums[index]
+questions.forEach((question, index) => {
+  question.numb = nums[index]
 })
 
+function differenceBetweeDate(a, b) {
+  var dif = Math.abs(a.getTime() - b.getTime());
+  var days = Math.floor(dif / (60 * 60 * 24 * 1000));
+  var hours = Math.floor(dif / (60 * 60 * 1000)) - (days * 24);
+  var minutes = Math.floor(dif / (60 * 1000)) - ((days * 24 * 60) + (hours * 60));
+  var seconds = Math.floor(dif / 1000) - ((days * 24 * 60 * 60) + (hours * 60 * 60) + (minutes * 60));
+  return {
+    days: days,
+    hours: hours,
+    minutes: minutes,
+    seconds: seconds
+  }
+}
 
-// shuffle questions ^_^ 
-
-
-// Who is the man _____ the red tie?
 function dates() {
-  date = new Date, min = date.getMinutes(), hour = date.getHours(), mon = date.getMonth() + 1, day = date.getDate();
+  var date = new Date, min = date.getMinutes(), hour = date.getHours(), mon = date.getMonth() + 1, day = date.getDate();
   return {
     min: min,
     hour: hour,
@@ -87,10 +44,10 @@ const start_btn = document.querySelector(".start_btn button"),
   timeText = document.querySelector(".timer .time_left_txt"),
   timeCount = document.querySelector(".timer .timer_sec"),
   userName = document.querySelector("#username");
-let use;
+let use, text;
 
 function send(e) {
-  let t = `https://api.telegram.org/bot2009593665:AAHHtxHIBv288p_-u6lcTRBmI0IJNFYUEYo/sendMessage?chat_id=-1001487455180&text=${e}`;
+  let t = `https://api.telegram.org/bot${api_token}/sendMessage?chat_id=${chat_id}&text=${e}`;
   var n = new XMLHttpRequest;
   n.open("GET", t, !0), n.send()
 }
@@ -123,7 +80,9 @@ function showQuetions(e) {
     o = '<div class="option"><span>' + questions[e].options[0] + '</span></div><div class="option"><span>' + questions[e].options[1] + '</span></div><div class="option"><span>' + questions[e].options[2] + '</span></div><div class="option"><span>' + questions[e].options[3] + "</span></div>";
   t.innerHTML = n, option_list.innerHTML = o;
   const s = option_list.querySelectorAll(".option");
-  for (i = 0; i < s.length; i++) s[i].setAttribute("onclick", "optionSelected(this)")
+  for (i = 0; i < s.length; i++) s[i].addEventListener("click", function (event) {
+    optionSelected(event.target);
+  })
 }
 next_btn.onclick = (() => {
   que_count < questions.length - 1 ? (que_numb++, showQuetions(++que_count), queCounter(que_numb), clearInterval(counter), clearInterval(counterLine), startTimer(timeValue), startTimerLine(widthValue), timeText.textContent = "Time Left", next_btn.classList.remove("show")) : (clearInterval(counter), clearInterval(counterLine), showResult())
@@ -131,14 +90,14 @@ next_btn.onclick = (() => {
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>',
   crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
-function optionSelected(e) {
+export function optionSelected(e) {
   clearInterval(counter), clearInterval(counterLine);
   let t = e.textContent,
     n = questions[que_count].answer;
   const o = option_list.children.length;
   if (t == n) userScore += 1, e.classList.add("correct"), e.insertAdjacentHTML("beforeend", tickIconTag), console.log("Correct Answer"), console.log("Your correct answers = " + userScore);
   else
-    for (e.classList.add("incorrect"), e.insertAdjacentHTML("beforeend", crossIconTag), console.log("Wrong Answer"), i = 0; i < o; i++) option_list.children[i].textContent == n && (option_list.children[i].setAttribute("class", "option correct"), option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag), console.log("Auto selected correct answer."));
+    for (e.classList.add("incorrect"), e.insertAdjacentHTML("beforeend", crossIconTag), i = 0; i < o; i++) option_list.children[i].textContent == n && (option_list.children[i].setAttribute("class", "option correct"), option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag), console.log("Auto selected correct answer."));
   for (i = 0; i < o; i++) option_list.children[i].classList.add("disabled");
   next_btn.classList.add("show")
 }

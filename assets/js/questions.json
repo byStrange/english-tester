@@ -1,0 +1,58 @@
+{
+    "questions": [{
+            "numb": 1,
+            "question": "A dictionary has data _____ words.",
+            "answer": "about",
+            "options": ["to", "about", "in", "at"]
+        }, {
+            "numb": 2,
+            "question": " _____ you pass me the salt?",
+            "answer": "Could",
+            "options": ["Should", "Must", "Could", "Might"]
+        }, {
+            "numb": 3,
+            "question": "Did you _____ who I meant?",
+            "answer": "know",
+            "options": ["known", "knew", "know", "got"]
+        }, {
+            "numb": 4,
+            "question": "He _____ English much _____ he writes it.",
+            "answer": "speaks / better than",
+            "options": ["speaks / better than", "speak / worse", "speaks / clearer than", "speak /  a lot"]
+        }, {
+            "numb": 5,
+            "question": "I suggest _______  arrive a little early so as to get a good seat.",
+            "answer": "you should",
+            "options": ["you should not", "to arrive", "you to should", "you should"]
+        }, {
+            "numb": 6,
+            "question": "______ it`s raining, I will stay at home.",
+            "answer": "as long as",
+            "options": ["as long as", "on the other hand", "Because of", "however"]
+        },
+        {
+            "numb": 7,
+            "question": "It ______ me ____ hour to get to that place yesterday.",
+            "answer": "took / an",
+            "options": ["takes / a", "took / 2", "taken / an", "took / an"]
+        },
+        {
+            "numb": 8,
+            "question": "Who is the man _____ the red tie?",
+            "answer": "with",
+            "options": ["in", "on", "with", "off"]
+        },
+        {
+            "numb": 9,
+            "question": "I have been getting knowledge about IT _______ June.",
+            "answer": "since",
+            "options": ["since", "for", "to", "by"]
+        },
+        {
+            "numb": 10,
+            "question": "If I had a chance to study abroad, I _______ make my way to ________?",
+            "answer": "would  / Hungary",
+            "options": ["would / Hungry", "would  / Hungary", "were / Hungry", "was / Hungary"]
+        }
+    ]
+}
