@@ -219,6 +219,9 @@ function showResult() {
 }
 
 function startTimer(e) {
+  let currentIteration = 0,
+    totalIterations = e;
+
   counter = setInterval(function () {
     if (((timeCount.textContent = e), --e < 9)) {
       let e = timeCount.textContent;
@@ -237,7 +240,52 @@ function startTimer(e) {
       next_btn.classList.add("show");
     }
   }, 1e3);
+  let progressInterval = setInterval(function () {
+    currentIteration += 30; // Interval for smooth animation
+
+    let progressWidth =
+      (currentIteration / (totalIterations * 1000)) *
+      quiz_box.getBoundingClientRect().width;
+    time_line.style.width = progressWidth + "px";
+
+    if (currentIteration >= totalIterations * 1000) {
+      clearInterval(progressInterval);
+    }
+  }, 30);
 }
+
+// function startTimer(e) {
+//   let totalIterations = e; // Adjust based on the total time in seconds
+
+//   counter = setInterval(function () {
+//     if (--e < 9) {
+//       let timeValue = e < 0 ? "00" : "0" + e;
+//       timeCount.textContent = e;
+//     }
+
+//     if (e < 0) {
+//       clearInterval(counter);
+//       timeText.textContent = "Time Off";
+//       const optionCount = option_list.children.length;
+//       let correctAnswer = questions[que_count].answer;
+
+//       for (let i = 0; i < optionCount; i++) {
+//         if (option_list.children[i].textContent == correctAnswer) {
+//           option_list.children[i].setAttribute("class", "option correct");
+//           option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag);
+//           console.log("Time Off: Auto selected correct answer.");
+//         }
+//       }
+
+//       for (let i = 0; i < optionCount; i++) {
+//         option_list.children[i].classList.add("disabled");
+//       }
+
+//       next_btn.classList.add("show");
+//     }
+//   }, 1000);
+
+// }
 
 function startTimerLine(e) {
   return;
