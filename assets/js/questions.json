@@ -1,58 +1,184 @@
 {
-    "questions": [{
-            "numb": 1,
-            "question": "A dictionary has data _____ words.",
-            "answer": "about",
-            "options": ["to", "about", "in", "at"]
-        }, {
-            "numb": 2,
-            "question": " _____ you pass me the salt?",
-            "answer": "Could",
-            "options": ["Should", "Must", "Could", "Might"]
-        }, {
-            "numb": 3,
-            "question": "Did you _____ who I meant?",
-            "answer": "know",
-            "options": ["known", "knew", "know", "got"]
-        }, {
-            "numb": 4,
-            "question": "He _____ English much _____ he writes it.",
-            "answer": "speaks / better than",
-            "options": ["speaks / better than", "speak / worse", "speaks / clearer than", "speak /  a lot"]
-        }, {
-            "numb": 5,
-            "question": "I suggest _______  arrive a little early so as to get a good seat.",
-            "answer": "you should",
-            "options": ["you should not", "to arrive", "you to should", "you should"]
-        }, {
-            "numb": 6,
-            "question": "______ it`s raining, I will stay at home.",
-            "answer": "as long as",
-            "options": ["as long as", "on the other hand", "Because of", "however"]
-        },
-        {
-            "numb": 7,
-            "question": "It ______ me ____ hour to get to that place yesterday.",
-            "answer": "took / an",
-            "options": ["takes / a", "took / 2", "taken / an", "took / an"]
-        },
-        {
-            "numb": 8,
-            "question": "Who is the man _____ the red tie?",
-            "answer": "with",
-            "options": ["in", "on", "with", "off"]
-        },
-        {
-            "numb": 9,
-            "question": "I have been getting knowledge about IT _______ June.",
-            "answer": "since",
-            "options": ["since", "for", "to", "by"]
-        },
-        {
-            "numb": 10,
-            "question": "If I had a chance to study abroad, I _______ make my way to ________?",
-            "answer": "would  / Hungary",
-            "options": ["would / Hungry", "would  / Hungary", "were / Hungry", "was / Hungary"]
-        }
-    ]
+  "questions": [
+    {
+      "numb": 1,
+      "question": "I'll see you tomorrow at 11:00 ___usual",
+      "answer": "as",
+      "options": ["like", "as_as", "like", "as"]
+    },
+    {
+      "numb": 2,
+      "question": "It's July and the weather's awful! It's ___in winter",
+      "answer": "as",
+      "options": ["likes", "as like", "like", "as"]
+    },
+    {
+      "numb": 3,
+      "question": "I need to buy all sorts of things ___socks, shirts and knickers",
+      "answer": "such",
+      "options": ["likes", "such", "like", "as"]
+    },
+    {
+      "numb": 4,
+      "question": "My wife has found a job ___a personal assistant",
+      "answer": "as",
+      "options": ["likes", "as-as", "like", "as"]
+    },
+    {
+      "numb": 5,
+      "question": "Dave drinks ___a fish! I've never seen anyone drink as much",
+      "answer": "like",
+      "options": ["likes", "as such", "like", "as"]
+    },
+    {
+      "numb": 6,
+      "question": "My brother has a car ___yours",
+      "answer": "like",
+      "options": ["likes", "such", "like", "as"]
+    },
+    {
+      "numb": 7,
+      "question": "Don't touch anything. Leave everything ___it is.",
+      "answer": "as",
+      "options": ["likes", "so", "like", "as"]
+    },
+    {
+      "numb": 8,
+      "question": "It's freezing. My feet are ___block of ice.",
+      "answer": "like",
+      "options": ["likes", "such", "like", "as"]
+    },
+    {
+      "numb": 9,
+      "question": "I want ___more careful with your homework in future.",
+      "answer": "you to be",
+      "options": ["you be", "you to be", "that you are", "you being"]
+    },
+    {
+      "numb": 10,
+      "question": "I stopped ___when I was thirsty.",
+      "answer": "smoking",
+      "options": ["to smoke", "smoke", "smoking", "too smoke"]
+    },
+    {
+      "numb": 11,
+      "question": "Why did I agree ___with you? I can't stand it",
+      "answer": "to work",
+      "options": ["to work", "work", "working", "to working"]
+    },
+    {
+      "numb": 12,
+      "question": "I tried ___you that you were making a mistake, but you didn't listen.",
+      "answer": "to tell",
+      "options": ["tell", "to tell", "telling", "told"]
+    },
+    {
+      "numb": 13,
+      "question": "I'm looking forward ___you again soon.",
+      "answer": "to seeing",
+      "options": ["to see", "to seeing", "seeing", "too seeing"]
+    },
+    {
+      "numb": 14,
+      "question": "My parents let me ___what I wanted when I was young.",
+      "answer": "do",
+      "options": ["do", "to do", "doing", "does"]
+    },
+    {
+      "numb": 15,
+      "question": "I wasn't allowed ___out unless they knew where I was going",
+      "answer": "to go",
+      "options": ["going", "go", "to go", "going to"]
+    },
+    {
+      "numb": 16,
+      "question": "I finished ___the television, and then I went to bed.",
+      "answer": "watching",
+      "options": ["watching", "to watch", "watch", "watch to"]
+    },
+    {
+      "numb": 17,
+      "question": "I don't like people ___arrive late.",
+      "answer": "who",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 18,
+      "question": "The company ___he works for is based in Germany.",
+      "answer": "which",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 19,
+      "question": "Where are the scisssors ___I bought yesterday?",
+      "answer": "which",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 20,
+      "question": "I want you to meet the woman ___taught me how to drive.",
+      "answer": "who",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 21,
+      "question": "The meal ___you cooked was delicious.",
+      "answer": "which",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 22,
+      "question": "I like animals ___don't make a mess.",
+      "answer": "which",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 23,
+      "question": "The film ___I've always wanted to see is on TV tonight.",
+      "answer": "which",
+      "options": ["whose", "which", "who", "where"]
+    },
+    {
+      "numb": 24,
+      "question": "The flat ___they bought was very expensive.",
+      "answer": "which",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 25,
+      "question": "The room in our house ___is most used is the kitchen.",
+      "answer": "which",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 26,
+      "question": "I didn't like the meal ___we had yesterday.",
+      "answer": "which",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 27,
+      "question": "The people ___work here are very interesting.",
+      "answer": "who",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 28,
+      "question": "The man ___you were talking about ha sjust come in the room.",
+      "answer": "who",
+      "options": ["which", "whose", "who", "where"]
+    },
+    {
+      "numb": 29,
+      "question": "I received  a letter this morning ___really upset me.",
+      "answer": "which",
+      "options": ["whose", "which", "who", "where"]
+    },
+    {
+      "numb": 30,
+      "question": "Toby, a boy ___ I went to school with, is ill in hospital.",
+      "answer": "who",
+      "options": ["who", "whose", "which", "where"]
+    }
+  ]
 }
