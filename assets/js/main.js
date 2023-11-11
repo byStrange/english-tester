@@ -240,18 +240,18 @@ function startTimer(e) {
       next_btn.classList.add("show");
     }
   }, 1e3);
-  let progressInterval = setInterval(function () {
-    currentIteration += 30; // Interval for smooth animation
+  // let progressInterval = setInterval(function () {
+  //   currentIteration += 30; // Interval for smooth animation
 
-    let progressWidth =
-      (currentIteration / (totalIterations * 1000)) *
-      quiz_box.getBoundingClientRect().width;
-    time_line.style.width = progressWidth + "px";
+  //   let progressWidth =
+  //     (currentIteration / (totalIterations * 1000)) *
+  //     quiz_box.getBoundingClientRect().width;
+  //   time_line.style.width = progressWidth + "px";
 
-    if (currentIteration >= totalIterations * 1000) {
-      clearInterval(progressInterval);
-    }
-  }, 30);
+  //   if (currentIteration >= totalIterations * 1000) {
+  //     clearInterval(progressInterval);
+  //   }
+  // }, 30);
 }
 
 // function startTimer(e) {
