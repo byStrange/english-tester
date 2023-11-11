@@ -88,7 +88,7 @@ function send(e) {
   });
 let counter,
   counterLine,
-  timeValue = 15,
+  timeValue = 30,
   que_count = 0,
   que_numb = 1,
   userScore = 0,
@@ -98,7 +98,7 @@ const restart_quiz = result_box.querySelector(".buttons .restart"),
 (restart_quiz.onclick = () => {
   quiz_box.classList.add("activeQuiz"),
     result_box.classList.remove("activeResult"),
-    (timeValue = 15),
+    (timeValue = 30),
     (que_numb = 1),
     (userScore = 0),
     (widthValue = 0),
@@ -240,11 +240,12 @@ function startTimer(e) {
 }
 
 function startTimerLine(e) {
-  counterLine = setInterval(function () {
-    (e += 1),
-      (time_line.style.width = e + "px"),
-      e > quiz_box.getBoundingClientRect().width && clearInterval(counterLine);
-  }, 29);
+  return;
+  // counterLine = setInterval(function () {
+  //   (e += 1),
+  //     (time_line.style.width = e + "px"),
+  //     e > quiz_box.getBoundingClientRect().width && clearInterval(counterLine);
+  // }, 10);
 }
 
 function queCounter(e) {
